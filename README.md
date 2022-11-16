@@ -43,26 +43,101 @@
 
 <hr>
 
-<h3 align="center">A API deve se parecer com isto:</h3>
-<div align="center"><img width=400 src="./imgs_readme/img_get_all.png"></div>
+
+
+
+## Request.`GET`/certificados
+
+<h3>-Response-</h3>
+
+```
+[
+    {
+        "created_at": "2022-11-16 00:30:05-03:00",
+        "description": "Lorem ipsum dolor sit amet",
+        "expirated_at": "2022-12-06 00:30:05-03:00",
+        "expiration": 20,
+        "id": 1,
+        "name": "Eren Yger",
+        "updated_at": "",
+        "username": "cavalofesteir8000"
+    },
+    {
+        "created_at": "2022-11-16 00:31:00-03:00",
+        "description": "",
+        "expirated_at": "2022-12-06 00:31:00-03:00",
+        "expiration": 20,
+        "id": 2,
+        "name": "Fabio Akita",
+        "updated_at": "2022-11-16 00:31:15-03:00",
+        "username": "Akita01"
+    }
+]
+```
 <hr>
 
-### Request
+<h3>-Request-</h3> 
 
-`POST /thing/`
+## `GET`/certificados/`ID`
 
-    curl -i -H 'Accept: application/json' -d 'name=Foo&status=new' http://localhost:7000/thing
+<h3>-Response-</h3>
+
+```
+{
+    "created_at": "2022-11-16 00:36:54-03:00",
+    "description": "",
+    "expirated_at": "2023-09-12 00:36:54-03:00",
+    "expiration": 300,
+    "id": 3,
+    "name": "Kalebe Chimanski de Almeida",
+    "updated_at": "",
+    "username": "Kalebe16"
+}
+```
+<hr>
 
 
-### Response
+<h3>-Request-</h3> 
 
-    HTTP/1.1 201 Created
-    Date: Thu, 24 Feb 2011 12:36:30 GMT
-    Status: 201 Created
-    Connection: close
-    Content-Type: application/json
-    Location: /thing/1
-    Content-Length: 36
+## `POST`/certificados
 
-    {"id":1,"name":"Foo","status":"new"}
+<h3>-Response-</h3>
+
+```
+{
+    "mensagem": "CERTIFICADO CADASTRADO COM SUCESSO"
+}
+```
+<hr>
+
+
+<h3>-Request-</h3> 
+
+## `PUT`/certificados/`ID`
+
+<h3>-Response-</h3>
+
+```
+{
+    "mensagem": "CERTIFICADO EDITADO COM SUCESSO"
+}
+```
+<hr>
+
+
+
+<h3>-Request-</h3> 
+
+## `DELETE`/certificados/`ID`
+
+<h3>-Response-</h3>
+
+```
+{
+    "mensagem": "CERTIFICADO DELETADO COM SUCESSO"
+}
+```
+<hr>
+
+
 
