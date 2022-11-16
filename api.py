@@ -89,8 +89,7 @@ def editar_certificado_por_id(id):
         certificado_objeto.updated_at = data_edicao
         db.session.add(certificado_objeto)
         db.session.commit()
-        certificado_json = certificado_objeto.to_json()    
-        return jsonify(certificado_json), 200
+        return jsonify({'mensagem': 'CERTIFICADO EDITADO COM SUCESSO'}), 200
 
     except Exception as e:
         print('ERRO', e)
@@ -110,12 +109,10 @@ def incluir_novo_certificado():
         if body['expiration'] < 10 or body['expiration'] > 3650:
             return jsonify({'mensagem': "'expiration' DEVE ESTAR ENTRE 10 E 3650"}), 422
         else:
-            certificado = Certificados(username=body['username'], name=body['name'], description=body['description'], expiration=body['expiration'], created_at=data_atual, updated_at="", expirated_at=data_expiracao)
-            db.session.add(certificado)
+            certificado_objeto = Certificados(username=body['username'], name=body['name'], description=body['description'], expiration=body['expiration'], created_at=data_atual, updated_at="", expirated_at=data_expiracao)
+            db.session.add(certificado_objeto)
             db.session.commit()
-            certificados_objetos = Certificados.query.all()
-            certificados_json = [certificado.to_json() for certificado in certificados_objetos]
-            return jsonify(certificados_json), 200
+            return jsonify({'mensagem': 'CERTIFICADO CADASTRADO COM SUCESSO'}), 201
 
     except Exception as e:
         print("ERRO", e)
@@ -130,7 +127,7 @@ def excluir_certificado(id):
         certificado_objeto = Certificados.query.filter_by(id=id).first()
         db.session.delete(certificado_objeto)
         db.session.commit()
-        return jsonify({'mensagem': 'CERTIFICADO DELETADO COM SUCESSO!'}), 200
+        return jsonify({'mensagem': 'CERTIFICADO DELETADO COM SUCESSO'}), 200
 
     except Exception as e:
         print("ERRO", e)
@@ -150,8 +147,9 @@ def pegar_data_atual():
     return data_certa_brasil
 
 
+def create_app():
 
-if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-        app.run(port=5000, host='localhost', debug=True)
+    if __name__ == '__main__':
+        with app.app_context():
+            db.create_all()
+            app.run(port=5000, host='localhost', debug=True)
