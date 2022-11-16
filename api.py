@@ -46,7 +46,7 @@ class Certificados(db.Model):
 
 @app.route("/", methods=['GET'])
 def homepage():
-    return '<h3>Esta api é um CRUD basico para gerenciamento de certificados, mais detalhes de como utilizar: <a href="https://github.com/Kalebe16/itflex_desafio_backend_api/blob/master/README.md">CLIQUE AQUI</a></h3>'
+    return '<h3>Esta api é um CRUD basico para gerenciamento de certificados, mais detalhes de como utilizar <a href="https://github.com/Kalebe16/itflex_desafio_backend_api/blob/master/README.md">AQUI</a></h3>'
 
 
 # CONSULTAR (TODOS)
