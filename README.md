@@ -47,3 +47,35 @@
 <div align="center"><img width=400 src="./imgs_readme/img_get_all.png"></div>
 <hr>
 
+<h3>-Request-</h3> 
+
+## `GET`/certificados
+
+<h3>-Response-</h3>
+
+```
+[
+    {
+        "created_at": "2022-11-16 00:30:05-03:00",
+        "description": "Lorem ipsum dolor sit amet",
+        "expirated_at": "2022-12-06 00:30:05-03:00",
+        "expiration": 20,
+        "id": 1,
+        "name": "Eren Yger",
+        "updated_at": "",
+        "username": "cavalofesteir8000"
+    },
+    {
+        "created_at": "2022-11-16 00:31:00-03:00",
+        "description": "",
+        "expirated_at": "2022-12-06 00:31:00-03:00",
+        "expiration": 20,
+        "id": 2,
+        "name": "Fabio Akita",
+        "updated_at": "2022-11-16 00:31:15-03:00",
+        "username": "Akita01"
+    }
+]
+```
+
+
