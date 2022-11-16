@@ -5,6 +5,8 @@
 <h3>Descrição do projeto:</h3>
 <p><strong>- API desenvolvida utilizando Python, Flask, SQLAlchemy</strong></p>
 <p><strong>- CRUD básico para gerenciamento de certificados</strong></p>
+<p><strong>- Link da API: <a href="https://certificatemanagerapi.herokuapp.com/">https://certificatemanagerapi.herokuapp.com/</a></strong></p>
+
 <hr>
 
 
