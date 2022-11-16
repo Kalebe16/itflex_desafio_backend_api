@@ -42,8 +42,6 @@ class Certificados(db.Model):
         return f'Certificados [id:{self.id}, name:{self.name}, username:{self.username}, description:{self.description}, expiration:{self.expiration}, created_at:{self.created_at}, updated_at:{self.updated_at}]'
 
 
-
-
 @app.route("/", methods=['GET'])
 def homepage():
     return '<h3>Esta api é um CRUD basico para gerenciamento de certificados, mais detalhes de como utilizar <a href="https://github.com/Kalebe16/itflex_desafio_backend_api/blob/master/README.md">AQUI</a>.</h3>'
@@ -73,12 +71,12 @@ def obter_certificados_por_id(id):
 # EDITAR
 @app.route('/certificados/<int:id>', methods=['PUT'])
 def editar_certificado_por_id(id):
-    certificado_objeto = Certificados.query.filter_by(id=id).first()
-    body = request.get_json()
-    data_edicao = pegar_data_atual()
-
 
     try:
+        certificado_objeto = Certificados.query.filter_by(id=id).first()
+        body = request.get_json()
+        data_edicao = pegar_data_atual()
+        
         if 'username' in body:
             certificado_objeto.username = body['username']
         if 'name' in body:
@@ -89,12 +87,12 @@ def editar_certificado_por_id(id):
         certificado_objeto.updated_at = data_edicao
         db.session.add(certificado_objeto)
         db.session.commit()
+
         return jsonify({'mensagem': 'CERTIFICADO EDITADO COM SUCESSO'}), 200
 
     except Exception as e:
         print('ERRO', e)
         return jsonify({'mensagem': 'DEU RUIM, ERRO AO EDITAR CERTIFICADO'}), 404
-
 
 
 # CADASTRAR
@@ -136,14 +134,14 @@ def excluir_certificado(id):
 
 #FUNÇÕES SECUNDARIAS
 def pegar_data_atual():
-    """Pega data e hora do momento atual em que a função é chamada"""
+    """Retorna data e hora do momento atual em que a função é chamada"""
 
     data_atual = datetime.now()
     data_formato_datetime = datetime(year=data_atual.year, month=data_atual.month, day=data_atual.day, hour=data_atual.hour, minute=data_atual.minute, second=data_atual.second)
     fuso_horario_brasil = timezone('America/Sao_Paulo')
     data_certa_brasil = data_formato_datetime.astimezone(fuso_horario_brasil)
-    
     #return datetime.isoformat(date_in_datetime_format)
+
     return data_certa_brasil
 
 
