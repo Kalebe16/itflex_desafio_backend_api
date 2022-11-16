@@ -43,13 +43,10 @@
 
 <hr>
 
-<h3 align="center">A API deve se parecer com isto:</h3>
-<div align="center"><img width=400 src="./imgs_readme/img_get_all.png"></div>
-<hr>
 
-<h3>-Request-</h3> 
 
-## `GET`/certificados
+
+## Request.`GET`/certificados
 
 <h3>-Response-</h3>
 
@@ -77,5 +74,70 @@
     }
 ]
 ```
+<hr>
+
+<h3>-Request-</h3> 
+
+## `GET`/certificados/`ID`
+
+<h3>-Response-</h3>
+
+```
+{
+    "created_at": "2022-11-16 00:36:54-03:00",
+    "description": "",
+    "expirated_at": "2023-09-12 00:36:54-03:00",
+    "expiration": 300,
+    "id": 3,
+    "name": "Kalebe Chimanski de Almeida",
+    "updated_at": "",
+    "username": "Kalebe16"
+}
+```
+<hr>
+
+
+<h3>-Request-</h3> 
+
+## `POST`/certificados
+
+<h3>-Response-</h3>
+
+```
+{
+    "mensagem": "CERTIFICADO CADASTRADO COM SUCESSO"
+}
+```
+<hr>
+
+
+<h3>-Request-</h3> 
+
+## `PUT`/certificados/`ID`
+
+<h3>-Response-</h3>
+
+```
+{
+    "mensagem": "CERTIFICADO EDITADO COM SUCESSO"
+}
+```
+<hr>
+
+
+
+<h3>-Request-</h3> 
+
+## `DELETE`/certificados/`ID`
+
+<h3>-Response-</h3>
+
+```
+{
+    "mensagem": "CERTIFICADO DELETADO COM SUCESSO"
+}
+```
+<hr>
+
 
 
