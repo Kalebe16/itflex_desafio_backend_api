@@ -13,7 +13,7 @@
 <p><strong>- Ter o python instalado.</strong></p>
 <hr>
 
-<h3>Para testar o projeto:</h3>
+<h3>Para rodar o projeto:</h3>
 <p><strong>1- git clone https://github.com/Kalebe16/itflex_desafio_backend_api.git</strong></p>
 <p><strong>2- pip install -r requirements.txt</strong></p>
 <p><strong>3- python api.py</strong></p>
@@ -46,9 +46,7 @@
 
 
 
-## Request.`GET`/certificados
-
-<h3>-Response-</h3>
+## `GET`/certificados
 
 ```
 [
@@ -76,11 +74,8 @@
 ```
 <hr>
 
-<h3>-Request-</h3> 
 
 ## `GET`/certificados/`ID`
-
-<h3>-Response-</h3>
 
 ```
 {
@@ -97,12 +92,7 @@
 <hr>
 
 
-<h3>-Request-</h3> 
-
 ## `POST`/certificados
-
-<h3>-Response-</h3>
-
 ```
 {
     "mensagem": "CERTIFICADO CADASTRADO COM SUCESSO"
@@ -111,12 +101,7 @@
 <hr>
 
 
-<h3>-Request-</h3> 
-
 ## `PUT`/certificados/`ID`
-
-<h3>-Response-</h3>
-
 ```
 {
     "mensagem": "CERTIFICADO EDITADO COM SUCESSO"
@@ -125,13 +110,7 @@
 <hr>
 
 
-
-<h3>-Request-</h3> 
-
 ## `DELETE`/certificados/`ID`
-
-<h3>-Response-</h3>
-
 ```
 {
     "mensagem": "CERTIFICADO DELETADO COM SUCESSO"
